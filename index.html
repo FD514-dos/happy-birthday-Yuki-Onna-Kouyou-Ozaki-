@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heian</title>
+
+<style>
+body{
+    margin:0;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    color:white;
+    overflow:hidden;
+    font-family:"Times New Roman", serif;
+}
+
+#text{
+    font-size:2rem;
+    text-align:center;
+    padding:20px;
+}
+
+#image{
+    display:none;
+    max-width:80%;
+    max-height:80%;
+}
+</style>
+</head>
+<body>
+
+<div id="text"></div>
+
+<img id="image" src="image.jpg" alt="Heian">
+
+<script>
+const text = document.getElementById("text");
+const image = document.getElementById("image");
+
+// Bước 1
+text.innerText = "hôm nay quả thực là một ngày vui, mừng khách nhân trở về";
+
+// Sau 2 giây
+setTimeout(() => {
+    text.innerText = "heian";
+
+    // Sau thêm 2 giây
+    setTimeout(() => {
+        text.style.display = "none";
+        image.style.display = "block";
+    }, 2000);
+
+}, 2000);
+</script>
+
+</body>
+</html>
